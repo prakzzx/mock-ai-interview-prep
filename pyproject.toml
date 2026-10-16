@@ -1,0 +1,43 @@
+[project]
+name = "interview-prep"
+version = "0.1.0"
+description = "Interview Prep - a voice-based mock interview app (Streamlit, LiteLLM, Speechmatics, edge-tts)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "black>=25.1.0",
+    "edge-tts>=7.0.2",
+    "litellm>=1.70.4",
+    "noisereduce>=3.0.3",
+    "pygame>=2.6.1",
+    "pypdf>=5.5.0",
+    "pypdf2>=3.0.1",
+    "python-dotenv>=1.1.0",
+    "scipy>=1.15.3",
+    "sounddevice>=0.5.2",
+    "speechmatics-python>=4.0.0",
+    "streamlit>=1.45.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py311"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+# app.py and main.py call load_dotenv() before importing utils on purpose.
+"app.py" = ["E402"]
+"main.py" = ["E402"]

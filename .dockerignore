@@ -1,0 +1,11 @@
+.env
+.venv
+.git
+__pycache__/
+*.py[oc]
+.pytest_cache/
+.ruff_cache/
+audio/*
+outputs/*
+inputs/*
+tests/

@@ -1,0 +1,38 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+
+# Custom folders: keep folders, exclude their contents
+outputs/*
+!outputs/.gitkeep
+
+audio/*
+!audio/.gitkeep
+
+inputs/*
+!inputs/.gitkeep
+
+# Local audio files
+*.wav
+*.mp3
